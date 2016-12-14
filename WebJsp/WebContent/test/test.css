@@ -1,0 +1,24 @@
+@CHARSET "UTF-8";
+
+.divcss{
+	margin: auto;
+	text-align: center;
+	color:pink;
+}
+
+.yincang {
+	display: none;
+}
+
+.tdcss {
+	color: pink;
+	border: 1px #000000 solid;
+	font-family:华文行楷;
+}
+
+.table {
+	text-align: center;
+	background:#4646ff;
+	border-collapse: collapse;
+	border: 1px #000000solid
+}
