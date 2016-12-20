@@ -16,8 +16,8 @@
 	<form action="<%=request.getContextPath()%>/MyWeb/MyLoginServletDemo2">
 		<p style="padding: 30px 0px 10px; position: relative;"><span class="u_logo"></span><input class="ipt" name="userName" type="text" size="18" placeholder="请输入用户名或邮箱" value="" /></p><br /> 
 		<p style="position: relative;"><span class="p_logo"></span><input class="ipt" name="passWord" type="password" size="18" placeholder="请输入密码" value="" /></p><br />
-		<span class="inputcss"><input type="submit" value="提交" name="Submit"/>
-		<input type="reset" value="重置" name="Submit1" /></span>
+		<span class="inputcss"><input type="submit" value="提交" name="Submit" class="button"/>
+		<input type="reset" value="重置" name="Submit1" class="button button1" /></span>
 	</form>
 	</div>
 
