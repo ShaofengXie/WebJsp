@@ -36,17 +36,17 @@ public class MyLoginServletDemo extends HttpServlet {
 	out.println("<BODY>");
 	out.println("<H2>调用了doGet()方法</H2>");
 	out.println("<H2>用户输入信息如下：</H2>");
-	request.setCharacterEncoding("UTF-8");
-	String newusername=request.getParameter("username");
+	//request.setCharacterEncoding("UTF-8");
+	String username=request.getParameter("username");
 	//newusername=new String(newusername.getBytes("iso8859_1"),"UTF-8");//解决request请求数据乱码
-	if (newusername==null||newusername=="") {newusername="未输入";
+	if (username==null||username=="") {username="未输入";
 		
 	}
 	String password=request.getParameter("password");
 	if (password==null||password=="") {password="未输入";
 	
 	}
-	out.println("<H2>用户名:"+newusername+"</H2>");
+	out.println("<H2>用户名:"+username+"</H2>");
 	out.println("<H2>密 码:"+password+"</H2>");
 	out.println("</BODY>");
 	out.println("</HTML>");

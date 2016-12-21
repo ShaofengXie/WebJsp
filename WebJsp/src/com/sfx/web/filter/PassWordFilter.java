@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * Servlet Filter implementation class UserNameFilter
@@ -19,7 +20,7 @@ import javax.servlet.annotation.WebFilter;
 				DispatcherType.INCLUDE, 
 				DispatcherType.ERROR
 		}
-					, servletNames = { "MyLoginServletDemo" })
+					, urlPatterns = { "/MyWeb/MyLoginServletDemo2" })
 public class PassWordFilter implements Filter {
 
     /**
@@ -41,13 +42,22 @@ public class PassWordFilter implements Filter {
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		// TODO Auto-generated method stub
-		// place your code here
 		System.out.println("PassWordFilter过滤器：执行中....");
-		// pass the request along the filter chain
-		chain.doFilter(request, response);
+		String password = request.getParameter("passWord");
+		if (password == null || "".equals(password)) {
+			HttpServletResponse ht = (HttpServletResponse) response;
+			ht.sendRedirect("/WebJsp/filter/LoginPassWordeLost.html");
+		} else {
+	
+			System.out.println("PassWordFilter过滤器结束！");
+			chain.doFilter(request, response);
+		}
+	
 		System.out.println("PassWordFilter过滤器：执行结束。");
+		
 	}
+		
+
 
 	/**
 	 * @see Filter#init(FilterConfig)

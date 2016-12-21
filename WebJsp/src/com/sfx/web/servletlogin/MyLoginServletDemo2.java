@@ -34,21 +34,27 @@ public class MyLoginServletDemo2 extends HttpServlet {
 		response.setContentType("text/html;charset=GB2312");// 解决乱码问题
 		// response.setCharacterEncoding("GB2312");//解决乱码问题，与上面代码选一
 		request.setCharacterEncoding("UTF-8");
-		String newusername = request.getParameter("userName");
+		String username = request.getParameter("userName");
 		String password = request.getParameter("passWord");
-		// newusername=new
-		// String(newusername.getBytes("iso8859_1"),"UTF-8");//解决request请求数据乱码
-		if ("xsf".equals(newusername) && "123456".equals(password)) {
-			ServletContext context = getServletContext();
-			//RequestDispatcher rd = context.getRequestDispatcher("/jsp/MyWeb/Success.html");
-			//rd.forward(request, response);
-			response.sendRedirect(request.getContextPath()+"/jsp/MyWeb/Success.html");
-		} else {
-			/*RequestDispatcher rd = request.getRequestDispatcher("/jsp/MyWeb/MyLogin.jsp");
-			rd.forward(request, response);*/
-			response.sendRedirect(request.getContextPath()+"/jsp/MyWeb/MyLogin.jsp");
-		}
 
+		// String info = request.getParameter("username");
+		// String newinfo = new String(info.getBytes("iso8859_1"), "UTF-8");//
+		// 解决request请求数据乱码
+
+		if ("谢少峰".equals(username) && "123456".equals(password)) {
+			System.out.println("MyLoginServletDemo2：成功登录....");
+			RequestDispatcher rd = request.getRequestDispatcher("/jsp/MyWeb/Success.html");
+			rd.forward(request, response);
+			// response.sendRedirect(request.getContextPath() +
+			// "/jsp/MyWeb/Success.html");
+		} else {
+			System.out.println("MyLoginServletDemo2：登录失败....");
+			RequestDispatcher rd = request.getRequestDispatcher("/jsp/MyWeb/MyLogin.jsp");
+			rd.include(request, response);
+			// response.sendRedirect(request.getContextPath() +
+			// "/jsp/MyWeb/MyLogin.jsp");
+		}
+		System.out.println("MyLoginServletDemo2：执行结束！");
 	}
 
 	/**
