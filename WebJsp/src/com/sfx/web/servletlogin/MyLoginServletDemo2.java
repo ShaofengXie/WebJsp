@@ -31,7 +31,7 @@ public class MyLoginServletDemo2 extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		response.setContentType("text/html;charset=GB2312");// 解决乱码问题
+		response.setContentType("text/html;charset=UTF-8");// 解决乱码问题
 		// response.setCharacterEncoding("GB2312");//解决乱码问题，与上面代码选一
 		request.setCharacterEncoding("UTF-8");
 		String username = request.getParameter("userName");
@@ -43,16 +43,16 @@ public class MyLoginServletDemo2 extends HttpServlet {
 
 		if ("谢少峰".equals(username) && "123456".equals(password)) {
 			System.out.println("MyLoginServletDemo2：成功登录....");
-			RequestDispatcher rd = request.getRequestDispatcher("/jsp/MyWeb/Success.html");
+			RequestDispatcher rd = request.getRequestDispatcher("/jsp/MyWeb/Success.jsp");
 			rd.forward(request, response);
 			// response.sendRedirect(request.getContextPath() +
 			// "/jsp/MyWeb/Success.html");
 		} else {
 			System.out.println("MyLoginServletDemo2：登录失败....");
-			RequestDispatcher rd = request.getRequestDispatcher("/jsp/MyWeb/MyLogin.jsp");
-			rd.include(request, response);
-			// response.sendRedirect(request.getContextPath() +
-			// "/jsp/MyWeb/MyLogin.jsp");
+			//RequestDispatcher rd = request.getRequestDispatcher("/jsp/MyWeb/MyLogin.jsp");
+			//rd.include(request, response);
+			response.sendRedirect(request.getContextPath() +
+			 "/jsp/MyWeb/MyLogin.jsp");
 		}
 		System.out.println("MyLoginServletDemo2：执行结束！");
 	}
