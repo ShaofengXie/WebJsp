@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	<!-- BoyConstructor.java -->
+	<bean id="chinaGirlFriend" class="com.xsf.spring.set.ChinaGirlFriend">
+		<property name="language" value="chinese"></property>
+	</bean>
+	<bean id="boyConstructor" class="com.xsf.spring.set.BoyConstructor">
+		<!-- 通过构造方法注入对象 -->
+		<constructor-arg ref="chinaGirlFriend"></constructor-arg>
+	</bean>
+	<!-- BoySetter.java -->
+	<bean id="japanGirlFriend" class="com.xsf.spring.set.JapanGirlFriend">
+		<property name="language" value="japanese"></property>
+	</bean>
+
+
+	<bean id="boySetter" class="com.xsf.spring.set.BoySetter">
+		<!-- 通过Setter方法注入对象 -->
+		<property name="girlFriend" ref="japanGirlFriend"></property>
+	</bean>
+	<!-- BoyPNameSpace.java -->
+	<bean id="usaGirlFriend" class="com.xsf.spring.set.UsaGirlFriend"
+		p:language="english" />
+	<!-- 通过P命名空间注入属性值 -->
+	<bean id="boyPNameSpace" class="com.xsf.spring.set.BoyPNameSpace"
+		p:girlFriend-ref="usaGirlFriend" />
+</beans>
