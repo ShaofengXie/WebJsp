@@ -8,6 +8,6 @@
 </head>
 <body>
 用户名和密码输入错误啦.....
-	<a href="javascript:history-back(-1)">返回</a>
+	<a href="javascript:history.back(-1)">返回</a>
 </body>
 </html>
