@@ -10,14 +10,17 @@
 		 name url地址，与页面form中的action对应 
 		 class 具体的类控制器 
 		 result-name 跳转结果别名，后面是具体的地址 -->
+		<!-- 定义处理请求的action，此处为LoginAction。结果有两种，然后决定跳转 -->
 		<action name="login1" class="com.xsf.train.struts2.login.LoginAction">
 			<result name="success">/login/success.jsp</result>
 			<result name="error">/login/error.jsp</result>
 		</action>
+		<!-- 定义处理请求的action，此处为LoginAction2。结果有两种，然后决定跳转 -->
 		<action name="login2" class="com.xsf.train.struts2.login.LoginAction2">
 			<result name="success">/login/success.jsp</result>
 			<result name="error">/login/error.jsp</result>
 		</action>
+		<!-- 定义处理请求的action，此处为LoginAction3。结果有两种，然后决定跳转 -->
 		<action name="login3" class="com.xsf.train.struts2.login.LoginAction3">
 			<result name="success">/login/success.jsp</result>
 			<result name="error">/login/error.jsp</result>
