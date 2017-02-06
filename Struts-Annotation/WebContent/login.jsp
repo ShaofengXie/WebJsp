@@ -21,7 +21,7 @@
 					maxlength="40" size="18"></td>
 			</tr>
 			<tr>
-				<td align="center" colspan="2"><input type="submit" value="确定" /><input
+				<td align="center" colspan="2"><input type="submit" value="确定" />&nbsp;<input
 					type="reset" value="重置"></td>
 			</tr>
 		</table>

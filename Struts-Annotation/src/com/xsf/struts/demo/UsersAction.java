@@ -17,8 +17,9 @@ public class UsersAction extends ActionSupport {
 
 	/**
 	 * value的值是path，页面form的action的值对应
-	 * 
-	 * @Result返回结果 name 跳转地址别名 location 具体的跳转地址
+	 * @Result返回结果 
+	 * name 跳转地址别名 
+	 * location 具体的跳转地址
 	 *
 	 */
 	@Action(value = "/users", results = { @Result(name = "success", location = "/results/success.jsp") })
